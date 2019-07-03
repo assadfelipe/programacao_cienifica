@@ -1,4 +1,4 @@
-
+## https://www.ufrgs.br/reamat/CalculoNumerico/livro-py/pdvdc-metodo_de_diferencas_finitas.html
 ##Variaveis globais
 
 k = [0] #contém o valor de k no intervalo correspondente
@@ -25,3 +25,10 @@ k = k[1:]
 pos = pos[1:]  
 print(k)
 print(pos)
+
+
+
+
+
+##Inicio da resolucao do problema
+
