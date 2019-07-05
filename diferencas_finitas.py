@@ -1,5 +1,7 @@
 ## https://www.ufrgs.br/reamat/CalculoNumerico/livro-py/pdvdc-metodo_de_diferencas_finitas.html
 ##Variaveis globais
+import numpy as np
+
 
 k = [0] #contém o valor de k no intervalo correspondente
 pos = [0] #define as fronteiras dos intervalos
@@ -32,3 +34,32 @@ print(pos)
 
 ##Inicio da resolucao do problema
 
+##Define os valores constantes
+N = 3
+h = 0.25
+A = np.zeros((N,N))  
+b = np.zeros(N)  
+ 
+
+ ##Preenche matriz A e b (as matrizes envolvidas no poblema)
+A[0,0] = -2  
+A[0, 1] = 1
+b[0] = 2*h**2 -2
+for i in np.arange(1,N-1):  
+    A[i,i-1] = 1  
+    A[i,i] = -2  
+    A[i,i+1] = 1  
+    b[i] = 2 * h**2
+A[N-1,N-1] = -2  
+A[N-1, N-2] = 1
+b[N-1] = 2*h**2 -3
+
+print('\n\nMatriz A: \n')
+print(A)
+print('\n\nMatriz B: \n')
+print(b)
+
+##Calcula o vetor de resposta (sistema de equacoes)
+resp2 = np.linalg.solve(A, b)
+print('\n\Resultado:\n')
+print(resp2)
