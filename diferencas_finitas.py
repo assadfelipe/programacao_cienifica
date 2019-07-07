@@ -31,5 +31,5 @@ def define_valores():
 
 #Chama função inicial que vai determinar os valores de K durante toda a execução
 define_valores()
-
+#
 
